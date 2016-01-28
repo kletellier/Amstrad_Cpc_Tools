@@ -1,0 +1,8 @@
+CapriceRPI
+bin/pasmo
+bin/iDSK
+bin/capriceRPI
+samples/*.bin
+samples/*.dsk
+iDSK-0.13
+pasmo-0.5.3

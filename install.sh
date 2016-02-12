@@ -40,9 +40,18 @@ cd $SETUP_PATH/pasmo-0.5.3
 make
 cp pasmo $BIN_PATH
 rm -rf $SETUP_PATH/pasmo-0.5.3
+# install hfe tools
+wget https://github.com/jfdelnero/HxCFloppyEmulator_software/archive/HxCFloppyEmulator_software_V1_6_11_16.zip
+unzip HxCFloppyEmulator_software_V1_6_11_16.zip
+cd HxCFloppyEmulator_software-HxCFloppyEmulator_software_V1_6_11_16
+cd linux
+make
+cp hxcfloppyemulator_convert $BIN_PATH
 # compile sample
 cd $BIN_PATH
 # assemble hello world file
 ./pasmo $SAMPLE_PATH/helloworld.asm $SAMPLE_PATH/hw.bin
 # create disk file
 ./iDSK $SAMPLE_PATH/hello.dsk -n -i $SAMPLE_PATH/hw.bin -e 4000 -c 4000 -t 1
+# create hfe file
+./hxcfloppyemulator_convert $SAMPLE_PATH/hello.dsk -HFE

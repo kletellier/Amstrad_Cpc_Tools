@@ -41,11 +41,12 @@ make
 cp pasmo $BIN_PATH
 rm -rf $SETUP_PATH/pasmo-0.5.3
 # install hfe tools
+cd $SETUP_PATH
 wget https://github.com/jfdelnero/HxCFloppyEmulator_software/archive/HxCFloppyEmulator_software_V1_6_11_16.zip
-unzip HxCFloppyEmulator_software_V1_6_11_16.zip
-cd HxCFloppyEmulator_software-HxCFloppyEmulator_software_V1_6_11_16
+unzip $SETUP_PATH/HxCFloppyEmulator_software_V1_6_11_16.zip
+cd $SETUP_PATH/HxCFloppyEmulator_software-HxCFloppyEmulator_software_V1_6_11_16
 cd linux
-make
+make hxcfloppyemulator_convert
 cp hxcfloppyemulator_convert $BIN_PATH
 # compile sample
 cd $BIN_PATH

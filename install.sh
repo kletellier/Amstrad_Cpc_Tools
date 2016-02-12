@@ -48,6 +48,7 @@ cd $SETUP_PATH/HxCFloppyEmulator_software-HxCFloppyEmulator_software_V1_6_11_16
 cd linux
 make hxcfloppyemulator_convert
 cp hxcfloppyemulator_convert $BIN_PATH
+rm -rf $SETUP_PATH/HxCFloppyEmulator*
 # compile sample
 cd $BIN_PATH
 # assemble hello world file
@@ -55,4 +56,5 @@ cd $BIN_PATH
 # create disk file
 ./iDSK $SAMPLE_PATH/hello.dsk -n -i $SAMPLE_PATH/hw.bin -e 4000 -c 4000 -t 1
 # create hfe file
-./hxcfloppyemulator_convert $SAMPLE_PATH/hello.dsk -HFE
+cd $SAMPLE_PATH
+$BIN_PATH/hxcfloppyemulator_convert $SAMPLE_PATH/hello.dsk -HFE
